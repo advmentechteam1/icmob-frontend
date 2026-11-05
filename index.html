@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICMob Camera – Smart Camera App</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Reusable SVG icons ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cam" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-rec" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 10l5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9l5 3-5 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ptz" viewBox="0 0 24 24"><path d="M12 3l3 3-3 3-3-3zM12 15l3 3-3 3-3-3zM3 12l3-3 3 3-3 3zM15 12l3-3 3 3-3 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5l1.6 2.4 2.8-.6.9 2.7 2.7.9-.6 2.8 2.4 1.6-2.4 1.6.6 2.8-2.7.9-.9 2.7-2.8-.6L12 21.5l-1.6-2.4-2.8.6-.9-2.7-2.7-.9.6-2.8L2.2 12l2.4-1.6-.6-2.8 2.7-.9.9-2.7 2.8.6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="container nav">
+    <a href="./" class="brand" aria-label="ICMob Camera home"><img class="brand-mark" src="assets/logo.svg" alt="" width="40" height="40"><span class="brand-text">ICMob<small>Camera</small></span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="nav">
+      <a href="./" class="active">Home</a>
+      <a href="features/">Features</a>
+      <a href="how-it-works/">How It Works</a>
+      <a href="screenshots/">Screenshots</a>
+      <a href="support/">Support</a>
+      <a href="how-it-works/" class="btn btn-primary btn-sm nav-dl-m">Get Started</a>
+    </nav>
+    <a href="how-it-works/" class="btn btn-primary btn-sm nav-dl">Get Started</a>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="chip"><svg class="ic"><use href="#i-cam"/></svg> Smart Camera App</span>
+      <h1>Monitor Your Home,<br>Office &amp; Loved Ones<br><span class="accent">Anytime, Anywhere</span></h1>
+      <p>ICMob Camera – A powerful and easy-to-use app for live monitoring, recording and complete security.</p>
+      <div class="ph-btns"><a class="btn btn-primary" href="how-it-works/">See How It Works</a><a class="btn btn-ghost" href="features/">Explore Features</a></div>
+    </div>
+    </div>
+</section>
+
+<!-- ===== Quick features strip ===== -->
+<section class="strip">
+  <div class="container strip-grid">
+    <div class="strip-item">
+      <span class="s-icon"><svg viewBox="0 0 48 48"><rect x="6" y="12" width="26" height="24" rx="4" fill="#1d6ff2"/><path d="M34 21l9-5v16l-9-5z" fill="#1d6ff2"/><path d="M16 19l9 5-9 5z" fill="#fff"/></svg></span>
+      <div><h4>Live Monitoring</h4><p>Watch real-time video from anywhere</p></div>
+    </div>
+    <div class="strip-item">
+      <span class="s-icon hd">HD</span>
+      <div><h4>HD Video Quality</h4><p>Crystal clear and smooth video</p></div>
+    </div>
+    <div class="strip-item">
+      <span class="s-icon"><svg viewBox="0 0 48 48"><path d="M30 6a18 18 0 1 0 12 30A15 15 0 0 1 30 6z" fill="#1d6ff2"/><path d="M36 8l1.2 3 3 1.200-3 1.200L36 16l-1.200-3-3-1.200 3-1.200z" fill="#1d6ff2"/></svg></span>
+      <div><h4>Night Vision</h4><p>Clear view even in low light</p></div>
+    </div>
+    <div class="strip-item">
+      <span class="s-icon"><svg viewBox="0 0 48 48" fill="none" stroke="#1d6ff2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="30" cy="9" r="3.5" fill="#1d6ff2"/><path d="M26 16l-8 5-4 9M26 16l5 8 8 2M22 26l-6 12M26 16l-3 10 8 6v8"/><path d="M5 14h8M3 22h7" stroke-width="3"/></svg></span>
+      <div><h4>Motion Detection</h4><p>Get instant alerts on any movement</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Features ===== -->
+<section class="features" id="features">
+  <div class="container features-inner">
+    <div class="phones-img" id="screenshots"><img src="assets/app-screens.webp" alt="ICMob Camera app screens"></div>
+    <div class="features-text">
+      <h2>Powerful Features<br>in One <span class="accent">Smart App</span></h2>
+      <ul class="check-list">
+        <li><svg><use href="#i-check"/></svg>Live View &amp; Remote Access</li>
+        <li><svg><use href="#i-check"/></svg>Record &amp; Play Back Videos</li>
+        <li><svg><use href="#i-check"/></svg>Two-Way Audio (Talk &amp; Listen)</li>
+        <li><svg><use href="#i-check"/></svg>Motion Alerts &amp; Notifications</li>
+        <li><svg><use href="#i-check"/></svg>PTZ Control (Pan, Tilt, Zoom)</li>
+        <li><svg><use href="#i-check"/></svg>Multiple Device Support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!--WHY--><section class="section" id="why">
+  <div class="container">
+    <h2 class="center">Why Choose <span class="accent">ICMob Camera</span></h2><p class="center sub">Everything you need to look after your place, in one simple app.</p>
+    <div class="cards c3">
+      <div class="card"><span class="card-ic"><svg><use href="#i-dl"/></svg></span><h3>Quick, easy setup</h3><p>Download the app, scan the camera and start watching within minutes. No technical skills needed.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-play"/></svg></span><h3>Watch from anywhere</h3><p>Open your camera from home, the office or while travelling, on Wi-Fi or mobile data.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-cam"/></svg></span><h3>Clear HD and night view</h3><p>Sharp video up to 1080P Full HD, with infrared night vision for dark rooms and outdoors.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-gear"/></svg></span><h3>Smart motion alerts</h3><p>Get a notification with a snapshot as soon as movement is detected in your chosen zones.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-mic"/></svg></span><h3>Talk and listen</h3><p>Speak to visitors, family or pets through the camera using two-way audio.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-check"/></svg></span><h3>Private and secure</h3><p>Only people you invite can view your cameras, and you can remove access whenever you want.</p></div>
+    </div>
+  </div>
+</section><!--/WHY-->
+
+<!--GALLERY--><section class="section explore" id="explore">
+  <div class="container">
+    <h2 class="center">Explore Our <span class="accent">Features</span></h2>
+    <p class="center sub">Everything ICMob Camera can do for your home and business.</p>
+    <div class="explore-grid">
+      <a class="explore-card" href="features/#live-monitoring"><div class="imgwrap"><img src="assets/live-monitoring.webp" alt="Live Monitoring in Real-Time" loading="lazy"><span class="pill"><i></i>Live</span><div class="cap"><b>Live Monitoring in Real-Time</b><small>Watch what matters, right from your smartphone, anywhere in the worl.</small><span>Learn more <svg class="ic"><use href="#i-arrow"/></svg></span></div></div></a>
+      <a class="explore-card" href="features/#hd-video"><div class="imgwrap"><img src="assets/hd-video.webp" alt="Crystal Clear HD Video" loading="lazy"><div class="chips pos-b"><span style="animation-delay:0s">1080P Full HD</span><span style="animation-delay:0.6s">Adaptive quality</span><span style="animation-delay:1.2s">Night mode</span></div><div class="cap"><b>Crystal Clear HD Video</b><small>Enjoy sharp, detailed and high-quality live video up to 1080P Full H.</small><span>Learn more <svg class="ic"><use href="#i-arrow"/></svg></span></div></div></a>
+      <a class="explore-card" href="features/#motion-detection"><div class="imgwrap"><img src="assets/motion-detection.webp" alt="Smart Motion Detection" loading="lazy"><div class="notif"><b>ICMob Camera</b><small>Motion detected at Front Door</small><em>now</em></div><div class="cap"><b>Smart Motion Detection</b><small>Get instant alerts on your phone when any movement is detecte.</small><span>Learn more <svg class="ic"><use href="#i-arrow"/></svg></span></div></div></a>
+      <a class="explore-card" href="features/#two-way-audio"><div class="imgwrap"><img src="assets/two-way-audio.webp" alt="Two-Way Audio – Talk & Listen" loading="lazy"><div class="chips pos-d"><span style="animation-delay:0s">Hello, your package has arrived!</span><span style="animation-delay:0.6s">Hi, please leave it at the door.</span></div><div class="cap"><b>Two-Way Audio – Talk &amp; Listen</b><small>Talk and listen in real time from anywher.</small><span>Learn more <svg class="ic"><use href="#i-arrow"/></svg></span></div></div></a>
+      <a class="explore-card" href="features/#all-weather"><div class="imgwrap"><img src="assets/all-weather.webp" alt="All-Weather Security" loading="lazy"><div class="chips pos-c"><span style="animation-delay:0s">Rainproof</span><span style="animation-delay:0.6s">Dustproof</span><span style="animation-delay:1.2s">Weatherproof</span></div><div class="cap"><b>All-Weather Security</b><small>Built for 24/7 protection in any weathe.</small><span>Learn more <svg class="ic"><use href="#i-arrow"/></svg></span></div></div></a>
+      <a class="explore-card" href="features/#multi-device"><div class="imgwrap"><img src="assets/multi-device.webp" alt="Multi-Device Access" loading="lazy"><div class="chips pos-a"><span style="animation-delay:0s">Mobile</span><span style="animation-delay:0.6s">Tablet</span><span style="animation-delay:1.2s">Computer</span><span style="animation-delay:1.7999999999999998s"><i></i>One account, all devices</span></div><div class="cap"><b>Multi-Device Access</b><small>Monitor your cameras on mobile, tablet and computer with the same accoun.</small><span>Learn more <svg class="ic"><use href="#i-arrow"/></svg></span></div></div></a>
+      <a class="explore-card" href="features/#secure"><div class="imgwrap"><img src="assets/secure.webp" alt="Secure & Private Monitoring" loading="lazy"><div class="chips pos-a"><span style="animation-delay:0s">End-to-end encrypted</span><span style="animation-delay:0.6s">Encrypted cloud backup</span><span style="animation-delay:1.2s">Private access control</span></div><div class="cap"><b>Secure &amp; Private Monitoring</b><small>Your videos are encrypted and protected with advanced securit.</small><span>Learn more <svg class="ic"><use href="#i-arrow"/></svg></span></div></div></a>
+    </div>
+    <p class="center" style="margin-top:28px"><a class="btn btn-primary btn-sm" href="features/">View All Features</a></p>
+  </div>
+</section><!--/GALLERY-->
+
+<!--USE--><section class="section alt" id="use-cases">
+  <div class="container">
+    <h2 class="center">Made for <span class="accent">Every Place</span></h2><p class="center sub">Choose how you want to use ICMob Camera.</p>
+    <div class="cards c4">
+      <div class="card"><span class="card-ic"><svg><use href="#i-cam"/></svg></span><h3>Home</h3><p>Watch over family, kids and pets, and see who is at the door.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-play"/></svg></span><h3>Office</h3><p>Monitor entrances and workspaces, and review recordings any time.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-ptz"/></svg></span><h3>Shops and business</h3><p>Cover counters and storerooms, and get alerts when the shop is closed.</p></div>
+      <div class="card"><span class="card-ic"><svg><use href="#i-mic"/></svg></span><h3>Elderly care</h3><p>Check on loved ones from far away and talk to them whenever needed.</p></div>
+    </div>
+  </div>
+</section><!--/USE-->
+
+<!-- ===== How it works ===== -->
+<section class="how" id="how">
+  <div class="container">
+    <h2 class="center">How It <span class="accent">Works</span></h2>
+    <p class="center sub">Get started with ICMob Camera in just 3 simple steps</p>
+    <div class="steps">
+      <div class="step">
+        <span class="step-icon"><svg><use href="#i-dl"/></svg></span>
+        <h3>1. Install the App</h3>
+        <p>Install ICMob Camera on your Android or iOS phone</p>
+      </div>
+      <svg class="step-arrow"><use href="#i-arrow"/></svg>
+      <div class="step">
+        <span class="step-icon"><svg><use href="#i-cam"/></svg></span>
+        <h3>2. Add Your Camera</h3>
+        <p>Connect your IP camera or Wi-Fi camera easily</p>
+      </div>
+      <svg class="step-arrow"><use href="#i-arrow"/></svg>
+      <div class="step">
+        <span class="step-icon"><svg><use href="#i-play"/></svg></span>
+        <h3>3. Start Monitoring</h3>
+        <p>Watch live video anytime, anywhere</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Security banner ===== -->
+<section class="container">
+  <div class="banner">
+    <svg class="shield" viewBox="0 0 64 72"><path d="M32 4l24 8v20c0 18-11 31-24 36C19 63 8 50 8 32V12z" fill="none" stroke="#2f80ff" stroke-width="5" stroke-linejoin="round"/><path d="M21 36l8 8 15-17" fill="none" stroke="#2f80ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="banner-text">
+      <h2>Your Security,<br>Our <span class="accent">Priority</span></h2>
+      <p>24/7 monitoring, real-time alerts and secure access to keep what matters most always safe.</p>
+    </div>
+    <!--BC--><ul class="banner-chips"><li><svg><use href="#i-check"/></svg>End-to-end encrypted</li><li><svg><use href="#i-check"/></svg>24/7 real-time alerts</li><li><svg><use href="#i-check"/></svg>Private, secure access</li></ul><!--/BC-->
+  </div>
+</section>
+
+<!--TAIL--><section class="section" id="faq-preview">
+  <div class="container narrow">
+    <h2 class="center">Quick <span class="accent">Answers</span></h2><p class="center sub">The questions people ask most. More on the Support page.</p>
+    <div class="faq">
+      <details><summary>How long does setup take?</summary><p>Most people add their first camera in under five minutes.</p></details>
+      <details><summary>Can I watch my camera from more than one phone?</summary><p>Yes. Log in with the same account on other devices, or share access with family members.</p></details>
+      <details><summary>Where are my recordings stored?</summary><p>On the camera memory card and, if you enable it, in cloud storage.</p></details>
+      <details><summary>Will I get alerts when I am away from home?</summary><p>Yes. Motion alerts arrive as push notifications on your phone over Wi-Fi or mobile data.</p></details>
+    </div>
+    <p class="center" style="margin-top:24px"><a class="btn btn-primary btn-sm" href="support/#faq">See All FAQs</a></p>
+  </div>
+</section>
+
+<section class="container" id="download">
+  <div class="dl-panel">
+    <div>
+      <h2>Start with <span class="accent">ICMob Camera</span> Today</h2>
+      <p>Install the app on your Android or iOS phone, add your camera, and start watching live in minutes.</p>
+      <ul class="check-list">
+        <li><svg><use href="#i-check"/></svg>Live view, recording and playback</li>
+        <li><svg><use href="#i-check"/></svg>Motion alerts on your phone</li>
+        <li><svg><use href="#i-check"/></svg>Two-way audio and PTZ control</li>
+      </ul>
+      <div class="ph-btns"><a class="btn btn-primary" href="how-it-works/">See How It Works</a><a class="btn btn-ghost" href="features/">Explore Features</a></div>
+    </div>
+    <img src="assets/app-screens.webp" alt="ICMob Camera app screens" loading="lazy">
+  </div>
+</section><!--/TAIL-->
+
+<!-- ===== Footer ===== -->
+<footer class="footer" id="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a href="./" class="brand light" aria-label="ICMob Camera home"><img class="brand-mark" src="assets/logo.svg" alt="" width="40" height="40"><span class="brand-text">ICMob<small>Camera</small></span></a>
+      <p>A smart camera app for home, office and business security.</p>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <a href="./">Home</a><a href="features/">Features</a><a href="how-it-works/">How It Works</a><a href="screenshots/">Screenshots</a>
+    </div>
+    <div>
+      <h5>Support</h5>
+      <a href="support/#help">Help Center</a><a href="support/#faq">FAQs</a><a href="support/#contact">Contact Us</a><a href="support/#report">Report an Issue</a>
+    </div>
+    <div>
+      <h5>Connect With Us</h5>
+      <div class="social">
+        <a href="#" class="yt" aria-label="YouTube">▶</a><a href="#" class="ig" aria-label="Instagram">◎</a><a href="#" class="fb" aria-label="Facebook">f</a><a href="#" class="xx" aria-label="X">X</a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="container copy">© 2026 ICMob Camera. All rights reserved. &nbsp;·&nbsp; <a href="support/#privacy">Privacy &amp; Security</a></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
